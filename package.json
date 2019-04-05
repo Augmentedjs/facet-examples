@@ -54,6 +54,7 @@
     "presentation-application": "^2.5.6",
     "presentation-components": "^2.7.6",
     "presentation-css": "^2.2.0",
+    "presentation-facets": "^0.1.2",
     "presentation-logger": "^2.5.4",
     "presentation-mediator": "^2.5.9",
     "presentation-router": "^2.6.5"
