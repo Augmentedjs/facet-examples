@@ -2,6 +2,7 @@
 
 body {
   font-size: 16px;
+  height: 100vh;
 }
 
 * {
@@ -134,6 +135,10 @@ h3 {
 
 .main {
   transition: opacity 0.5s ease;
+
+  h1 {
+    margin-top: 0;
+  }
 }
 
 .transition-out {
@@ -158,6 +163,7 @@ dialog.about {
   height: 20rem;
 }
 
-.main h1 {
-  margin-top: 0;
+.filters {
+  width: 15rem;
+  height: calc(100vh - 10rem);
 }
