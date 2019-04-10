@@ -10,7 +10,6 @@ class HomeView extends DirectiveView {
       "name": "homeview",
       "style": "view",
       "template": `
-        <h1>A nice Facet Example Component</h1>
         <div id="facet"></div>
       `
     });

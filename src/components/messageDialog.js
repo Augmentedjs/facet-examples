@@ -11,7 +11,11 @@ class MessageDialog extends AlertDialogView {
     options.buttons.cancel = "ok";
     options.style = "alert";
     super(options);
-  }
+  };
+
+  remove() {
+    super.remove();
+  };
 };
 
 export default MessageDialog;

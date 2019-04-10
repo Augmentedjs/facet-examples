@@ -10,12 +10,12 @@ body {
 }
 
 :root {
-  --primary-color: #66bb6a;
-  --primary-color-dark: #338a3e;
-  --primary-color-light: #98ee99;
-  --secondary-color: #8D6E63;
-  --secondary-color-dark: #4E342E;
-  --secondary-color-light: #D7CCC8;
+  --primary-color: #2196F3;
+  --primary-color-dark: #1976D2;
+  --primary-color-light: #BBDEFB;
+  --secondary-color: #00E5FF;
+  --secondary-color-dark: #00CAE0;
+  --secondary-color-light: #33EAFF;
   --background-color: #f5f5f5;
   --app-color: #efefef;
   --light-text: rgba(255, 255, 255, 0.85);
@@ -163,7 +163,7 @@ dialog.about {
   height: 20rem;
 }
 
-.filters {
+.facets {
   width: 15rem;
   height: calc(100vh - 10rem);
 }
