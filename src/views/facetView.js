@@ -2,43 +2,19 @@ import { DirectiveView } from "presentation-decorator";
 import BaseFacetView from "presentation-facets";
 import Logger from "../logger/logger.js";
 import MessageDialog from "../components/messageDialog.js";
-import frog from "../images/frogHead.png";
+import jean1 from "../images/jean1.jpg";
+import jean2 from "../images/jean2.jpg";
+import jean3 from "../images/jean3.jpg";
 
 const MOUNT_POINT = "#facet";
 const NAME = "filterview";
 const FACETS = [
-  { "identifier": "characters",
-    "name": "Characters",
+  { "identifier": "legstyle",
+    "name": "Leg Style",
     "data": [
-      { "name": "Xzar", "value": "xzar" },
-      { "name": "Montaron", "value": "montaron" },
-      { "name": "Noober", "value": "noober" }
-    ]
-  },
-  {
-    "identifier": "locations",
-    "name": "Locations",
-    "data": [
-      { "name": "Candlekeep", "value": "candlekeep" },
-      { "name": "Cloakwood", "value": "cloakwood" },
-      { "name": "Nashkel", "value": "nashkel" }
-    ]
-  },
-  {
-    "identifier": "creatures",
-    "name": "Creatures",
-    "data": [
-      { "name": "Carrion Crawler", "value": "carrioncrawler" },
-      { "name": "Ankheg", "value": "ankheg" },
-      { "name": "Ogre", "value": "ogre" },
-      { "name": "Ettercap", "value": "ettercap" },
-      { "name": "Gnoll", "value": "gnoll" },
-      { "name": "Skeleton", "value": "skeleton" },
-      { "name": "Ogre Mage", "value": "ogremage" },
-      { "name": "Black Bear", "value": "blackbear" },
-      { "name": "Polar bear", "value": "polarbear" },
-      { "name": "Kobold", "value": "kobold" },
-      { "name": "Wolf", "value": "wolf" }
+      { "name": "Bootcut", "value": "bootcut" },
+      { "name": "Skinny", "value": "skinny" },
+      { "name": "Strait", "value": "strait" }
     ]
   },
   {
@@ -79,10 +55,23 @@ const FACETS = [
     "identifier": "images",
     "name": "Images",
     "data": [
-      { "name": "frog", "value": "frog", "image": frog }
+      { "name": "jean1", "value": "jean1", "image": jean1 },
+      { "name": "jean2", "value": "jean2", "image": jean2 },
+      { "name": "jean3", "value": "jean3", "image": jean3 }
     ],
     "type": "image"
-  }
+  },
+  {
+    "identifier": "price",
+    "name": "Price",
+    "data": [
+      { "name": "$1-$10", "value": "1" },
+      { "name": "$11-$20", "value": "11" },
+      { "name": "$21-$40", "value": "21" }
+    ],
+    "type": "price",
+    "range": true
+  },
 ];
 
 class FacetView extends BaseFacetView {
@@ -91,7 +80,7 @@ class FacetView extends BaseFacetView {
       "el": MOUNT_POINT,
       "name": NAME,
       "style": "view",
-      "title": "Balder's Gate",
+      "title": "Woman's Jeans",
       "facets": FACETS,
       "button": "Filter"
     });

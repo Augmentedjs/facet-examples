@@ -2,6 +2,7 @@ import Mediator from "../views/mediator.js";
 import Article from "../components/article.js";
 import Header from "../components/header.js";
 import Application from "../application/application.js";
+import Router from "../router/router.js";
 import { FONT } from "../constants.js";
 
 const initializeApp = async () => {
@@ -38,6 +39,10 @@ const initializeApp = async () => {
     if (!Application.mediator.channels) {
       throw new Error("Error observing views!");
     }
+
+    Application.title = "Facet Example";
+
+    await Application.registerRouter(new Router());
 
     const p = await Application.start();
     if (!p) {
