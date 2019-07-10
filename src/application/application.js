@@ -1,15 +1,14 @@
 import { Application as BaseApplication } from "presentation-application";
-import * as CONSTANTS from "../constants.js";
-import AboutDialog from "../components/aboutDialog.js";
+import Router from "../router/router.js";
+import { APP_NAME } from "../constants.js";
 
 class Application extends BaseApplication {
-  constructor(storage) {
-    super(CONSTANTS.APP_NAME);
-  };
-
-  about() {
-    const view = new AboutDialog();
-    view.render();
+  constructor() {
+    super({
+      "name": APP_NAME,
+      "router": new Router()
+    });
+    this.title = APP_NAME;
   };
 };
 

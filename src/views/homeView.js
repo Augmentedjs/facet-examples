@@ -1,5 +1,6 @@
 import { DirectiveView } from "presentation-decorator";
 import FacetView from "./facetView.js";
+import { PANEL } from "../messages.js";
 
 const MOUNT_POINT = "#main";
 
@@ -16,15 +17,17 @@ class HomeView extends DirectiveView {
     this._example = new FacetView();
   };
 
-  render() {
-    super.render();
-    this._example.render();
+  async render() {
+    await super.render();
+    await this._example.render();
+    await this.mediator.observeColleagueAndTrigger(this._example, PANEL, this._example.name);
     return this;
   };
 
-  remove() {
-    this._example.remove();
-    return super.remove();
+  async remove() {
+    await this.mediator.dismissColleagueTrigger(this._example, PANEL, this._example.name);
+    await this._example.remove();
+    return await super.remove();
   };
 };
 

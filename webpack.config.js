@@ -3,10 +3,10 @@ const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const ManifestPlugin = require("webpack-manifest-plugin");
 
 module.exports = {
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: ['./src/index.js'],
   context: __dirname,
   target: "web",
   output: {
@@ -61,7 +61,7 @@ module.exports = {
     ]
   },
   stats: "errors-only",
-  devtool: "source-map",
+  devtool: "cheap-source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
@@ -74,9 +74,11 @@ module.exports = {
       // both options are optional
       filename: "[name].css",
       chunkFilename: "[id].css"
-    })
-    /*,
-    new BundleAnalyzerPlugin()*/
+    }),
+    new webpack.DefinePlugin({
+      VERSION: JSON.stringify(require("./package.json").version)
+    }),
+    new ManifestPlugin()
   ],
   // optimization
   optimization: {
@@ -90,7 +92,7 @@ module.exports = {
         // vendor chunk
         vendor: {
           // sync + async chunks
-          chunks: 'all',
+          chunks: "all",
 
           // import file path containing node_modules
           test: /node_modules/
